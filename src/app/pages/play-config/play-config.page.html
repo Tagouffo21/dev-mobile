@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [fullscreen]="true">
+  <h3 class="title">Mboaculture</h3>
+  <ion-skeleton-text *ngIf="loaded" style="color: white; position:absolute;top:50%;left:50%; transfrom:translate(-50%,-50%);transition: .25s;"></ion-skeleton-text>
+
+<div class="contain" *ngIf="loaded">
+  <div class="imgBox" style="display:flex ;justify-content:center;">
+    <ion-img src="/assets/img/pop.jpeg" id="img"></ion-img>
+    <!--<img src="{{category.Image_categorie}}" alt="">-->
+    
+
+  </div>
+
+  <h5>{{'play_config.title' | translate}} </h5>
+
+
+  <ion-grid>
+    <ion-row  class="container">
+      <ion-col size="12" *ngFor="let item of Levels" (click) = "questionByLevel(item)">
+      <p>{{item.Libelle_niveau}}</p> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
+</div>
+</ion-content>
+
+

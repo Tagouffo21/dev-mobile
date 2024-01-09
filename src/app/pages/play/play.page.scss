@@ -1,0 +1,118 @@
+ion-toolbar{
+    --background:transparent;
+    position: absolute;
+    bottom: 0;
+
+    ion-back-button{
+      
+      color: var(--white);
+    }
+  }
+  
+  ion-content{
+    
+      --background: url("../../../assets/img/acceuil.jpg") no-repeat center/cover fixed  ;
+      
+    
+    
+      .title{
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color:rgb(255, 255, 255);
+        margin-left: 20px;
+      }
+
+
+    .timer{
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      width: 10rem;
+      height: 5rem;
+      border: .4rem solid rgba(18, 2, 36, 0.693);
+     
+      transform: translate(-50%,-50%);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span{
+        font-size: 1.6rem;
+        font-weight: 6;
+        color: var(--black);
+      }
+    }
+
+
+    .question{
+      position: relative;
+      margin-top: 70%;
+      padding: .6rem 1rem;
+      color: var(--white);
+
+      .progress{
+        text-align: center;
+        margin-top: -6rem;
+      }
+
+      span{
+        font-weight:bold;
+        opacity: .8;
+        font-size: 2rem;
+        color: black;
+
+      }
+
+      h4{
+        font-size: 1.2rem;
+        text-align: center;
+
+      }
+
+      
+    }
+    
+    .label{
+      background: var(--white);
+      background: rgb(255 255 255);
+      padding:1.2rem 2rem;
+      text-align: center;
+      margin: .5rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 2px 4px var(--white-shadow);
+      color: var(--contentground);
+      font-weight: 700;
+
+      &.true{
+        background: var(--true);
+        color: var(--white);
+      }
+      &.false{
+        background: var(--false);
+        color: var(--white);
+      }
+    }
+    .profile{
+      position: absolute;
+      width: 80%;
+      left: 50%;
+      top: 2%;
+      transform: translateX(-50%);
+      background: rgb(223, 195, 9);
+      box-shadow: 0 0 4px rgba(249, 241, 241, 0.474);
+      padding: .5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 30px;
+      color: #191818;
+      ion-icon{
+        font-size: 1.5rem;
+        border: 2px solid #060606;
+        padding: .2rem;
+        border-radius: 50%;
+      }}
+  }
+ 
+  

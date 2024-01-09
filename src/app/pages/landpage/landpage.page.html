@@ -1,0 +1,63 @@
+<ion-content [fullscreen]="true">
+  <!-- <ion-spinner *ngIf="!loaded" style="color: white; position:absolute;top:50%;left:50%; transfrom:translate(-50%,-50%);transition: .25s;"></ion-spinner> -->
+<div class="informations">
+  <div class="profile">
+    <div class="name" id="open-modal"><ion-icon name="person"></ion-icon><span>{{currentUserName}}</span></div>
+    <div class="score"><span class="points">Points</span><span>{{currentUSerScore}}</span></div>
+  </div>
+</div>
+
+<div class="head">
+  <h2>{{'home.title' | translate}}</h2>
+  <p class="description">{{'home.subtitle' | translate}}</p>
+
+</div>
+<div class="Play" *ngIf="loaded">
+  <ion-row class="categories" >
+    <ion-col class="category" size = 5 size-md= 4  *ngFor="let item of categories" (click) = "openPlayConfig(item)" >
+      <div class="hidden"></div>
+      <div style="" class="imgBox">`
+        <img src="{{item.Image_categorie}}" alt="">
+      </div>
+      <p>{{item.Libelle_categorie}}</p>
+    </ion-col>
+  </ion-row>
+
+</div>
+
+<div class="Play" *ngIf="!loaded">
+  <ion-row class="categories" >
+    <ion-col class="category" size = 5 size-md= 4  *ngFor="let item of [1,2,3,4]" (click) = "openPlayConfig(item)" >
+      <div class="hidden">
+       <ion-skeleton-text animated style="width:9rem;height: 7rem;top: -7%;"></ion-skeleton-text>
+      </div>
+      <p><ion-skeleton-text animated style="width: 80%;"></ion-skeleton-text></p>
+    </ion-col>
+  </ion-row>
+
+</div>
+
+<div class="goHome" [routerLink]="['/land-page']">
+  <ion-icon name="arrow-undo"></ion-icon>
+</div>
+
+
+<ion-modal #modal trigger="open-modal" id="sample-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5]" animated>
+  <ng-template>
+      <ion-list>
+        <h3 style="color: var(--ion-color-primary);text-align: center;font-weight: 700;">{{'home.rank' | translate}}</h3>
+        <ion-item *ngFor="let item of users | keyvalue">
+          <ion-avatar slot="start">
+            <ion-img src="assets/images/profile.jpeg"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{item.key}}</h2>
+            <p>{{item.value}} Points</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+  </ng-template>
+</ion-modal>
+
+
+</ion-content>

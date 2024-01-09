@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'proposerQuestionPage.pageTitle' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="proposerQuestion()">
+    <!-- Libellé de la question -->
+    <ion-item>
+      <ion-label position="floating">{{ 'proposerQuestionPage.questionLabel' | translate }}</ion-label>
+      <ion-input [(ngModel)]="question.Libelle_question" name="Libelle_question" required></ion-input>
+    </ion-item>
+
+    <!-- Catégorie de la question -->
+    <ion-item>
+      <ion-label position="floating">{{ 'proposerQuestionPage.categoryLabel' | translate }}</ion-label>
+      <ion-input [(ngModel)]="question.categories_id" name="categories_id" type="number" required></ion-input>
+    </ion-item>
+
+    <!-- Niveau de la question -->
+    <ion-item>
+      <ion-label position="floating">{{ 'proposerQuestionPage.levelLabel' | translate }}</ion-label>
+      <ion-input [(ngModel)]="question.niveaux_id" name="niveaux_id" type="number" required></ion-input>
+    </ion-item>
+
+    <!-- Réponses de la question -->
+    <ion-item *ngFor="let reponse of question.reponses; let i = index">
+      <ion-label position="floating">{{ 'proposerQuestionPage.answerLabel' }} {{ i + 1 }}</ion-label>
+      <ion-input [(ngModel)]="reponse.choix" name="choix_{{ i }}" required> </ion-input>
+ 
+    </ion-item>
+    <ion-item *ngFor="let reponse of question.reponses; let i = index">
+
+      <ion-checkbox [(ngModel)]="reponse.est_correct" name="est_correct_{{ i }}"></ion-checkbox>
+      <ion-label>{{ 'proposerQuestionPage.correctLabel' }}</ion-label>
+     
+    </ion-item>
+    <ion-item *ngFor="let reponse of question.reponses; let i = index">
+     
+      <ion-input [(ngModel)]="reponse.points" name="points_{{ i }}" type="number" required></ion-input>
+      <ion-label>{{ 'proposerQuestionPage.pointsLabel' }}</ion-label>
+    </ion-item>
+    
+
+    <ion-button expand="full" type="submit" [routerLink]="['/play-config']">{{ 'proposerQuestionPage.submitButton' | translate }}</ion-button>
+  </form>
+</ion-content>

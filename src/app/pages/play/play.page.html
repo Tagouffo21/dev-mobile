@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+  <ion-back-button slot="start"></ion-back-button>  
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <h3 class="title">Mboaculture</h3>
+  <ion-skeleton-text *ngIf="!loaded" style="color: white; position:absolute;top:50%;left:50%; transfrom:translate(-50%,-50%);transition: .25s;"></ion-skeleton-text>
+  <span *ngIf="msg!=''" class="msgWarn">{{msg}}</span>
+    <div class="profile" style="margin-top: 15%;" >
+      <!--<div class="informations">
+        <div class="profile">
+          <div class="name" id="open-modal"><ion-icon name="person"></ion-icon><span>{{currentUserName}}</span></div>
+          <div class="score"><span class="points">Points</span><span>{{currentUSerScore}}</span></div>
+        </div>
+      </div>-->
+      <div class="score" ><span class="points">Points</span><span>{{currentUSerScore}}</span></div>
+      <div class="share" (click)="socialSharing()" ><span><ion-icon name="share-social-outline"></ion-icon></span></div>
+    </div>
+  <div class="container" *ngIf="loaded"  >
+    <div class="timer" id="timer" style="margin-top: 9%;" >
+      <span>{{min}} : {{sec}}</span>
+    </div>
+  
+    <div class="question">
+      
+      <div class="progress">
+        <span>Question {{questionNumber}} {{'play.over' | translate}} {{questionlen}}</span>
+      </div>
+  
+      <h4>
+        {{init}}
+      </h4>
+  
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of responses" size="12">
+          <div class="label" (click)="validateAnswer(item)" [class]="item.style">
+            <span>{{item.choix}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="goHome" (click)="openDialog()" style="margin-top: 10%;">
+    <ion-button >autre niveau</ion-button>
+  </div>
+
+  <div class="congrats" [ngClass]="{active: end==true}">
+    <h1>{{'play.congrats_h1' | translate}} <span>!!</span></h1>
+    <h1><span>{{currentUSerScore}}</span> Points</h1>
+    <div class="imgBox">
+      <img src="assets/images/congrats.png" alt="">
+    </div>
+    <div class="text">
+      <h3><span>{{currentUserName}}</span> {{'play.congrats_h3' | translate}}</h3>
+    </div>
+
+    <div class="goHome">
+      <ion-icon name="arrow-undo"></ion-icon>
+    </div>
+  </div>
+  <div class="goHome"  [routerLink]="['/questions']" style="margin-top: 10%;">
+    <ion-button >proposer question</ion-button>
+  </div>
+
+</ion-content>

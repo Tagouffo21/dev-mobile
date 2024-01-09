@@ -1,0 +1,49 @@
+{
+  "land_page":{
+    "description":"Gagnez des ponts en jouant au questions / reponses sur l afrique et le cameroun",
+    "play_button":"Allons-y",
+    "modal_enter_name":"Entrez un profil",
+    "modal_selected_name":"ou selectionnez un profil",
+    "modal_button":"Jouer",
+    "input_placeholder":"Entrer votre nom",
+    "language":"langue"
+  },
+  "home":{
+    "title":"Jouons ensemble",
+    "subtitle":"Choisissez une catégorie",
+    "rank":"Classement des joueurs"
+  },
+  "play_config":{
+    "title":"Choisissez un niveau"
+  },
+  "play":{
+    "over":"sur",
+    "congrats_h1":"Felicitations",
+    "congrats_h3":"you completed this level successfully",
+    "change_level":"changer de niveau"
+  },
+  "confirm":{
+    "message":"voulez vous vraiment quitter ?",
+    "yes":"Oui",
+    "no":"Non"
+  },
+  "network":{
+    "problem":"Problème lors du chargement des données",
+    "connect":"Connectez-vous à internet"
+  },
+  "share":{
+    "copy":"copier le lien"
+  },
+  "proposerQuestionPage": {
+    "pageTitle": "Proposer une Question",
+    "questionLabel": "Libellé de la question",
+    "categoryLabel": "Catégorie de la question (ID)",
+    "levelLabel": "Niveau de la question (ID)",
+    "answerLabel": "Réponse",
+    "correctLabel": "Est correct",
+    "pointsLabel": "Points",
+    "submitButton": "Proposer la Question"
+  }
+  
+
+}

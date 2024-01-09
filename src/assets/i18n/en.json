@@ -1,0 +1,49 @@
+{
+  "land_page":{
+    "description":"Win bridges by playing questions and answers about Africa and Cameroon",
+    "play_button":"let's go",
+    "modal_enter_name":"Enter a profil",
+    "modal_selected_name":"or choose a profil",
+    "modal_button":"Play",
+    "input_placeholder":"Enter your name",
+    "language":"language"
+  },
+  "home":{
+    "title":"Let's play together",
+    "subtitle":"Choose a category",
+    "rank":"Players ranking"
+  },
+  "play_config":{
+    "title":"Choose a level"
+  },
+  "play":{
+    "over":"over",
+    "congrats_h1":"Congratulations",
+    "congrats_h3":"you completed this level successfully",
+    "change_level":"change level"
+  },
+  "confirm":{
+    "message":"Are your sure to want to leave",
+    "yes":"Yes",
+    "no":"No"
+  },
+  "network":{
+    "problem":"Issues on data loading",
+    "connect":"connect to internet"
+  },
+  "share":{
+    "copy":"copy the link"
+  },
+  "proposerQuestionPage": {
+    "pageTitle": "Propose a Question",
+    "questionLabel": "enonce de la question",
+    "categoryLabel": "Category ",
+    "levelLabel": "Level",
+    "answerLabel": "Answer",
+    "correctLabel": "Is Correct",
+    "pointsLabel": "Points",
+    "submitButton": "Submit"
+  }
+  
+
+}
